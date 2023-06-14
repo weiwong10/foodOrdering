@@ -1,0 +1,72 @@
+CREATE TABLE Customer(
+    customerID          INT		AUTO_INCREMENT,
+    email               VARCHAR(50)     NOT NULL,
+    password            VARCHAR(100)    NOT NULL,
+    name                VARCHAR(100)    NOT NULL,
+    contactNo           VARCHAR(20)     NOT NULL,
+    gender		VARCHAR(5)	NOT NULL,
+    dob			DATE,
+
+    PRIMARY KEY(customerID)
+);
+
+
+CREATE TABLE Staff(
+    staffID             INT		AUTO_INCREMENT,
+    staffName           VARCHAR(500)    NOT NULL,
+    staffEmail          VARCHAR(200)    NOT NULL,
+    staffType           VARCHAR(100)    NOT NULL,
+    staffPassword       VARCHAR(100)    NOT NULL,
+
+    PRIMARY KEY(staffID)
+);
+
+
+CREATE TABLE Orders(
+    orderID		INT		 AUTO_INCREMENT,
+    orderDate		DATE             NOT NULL,
+    amount              DOUBLE(6,2)	 	 ,
+    orderStatus      	VARCHAR(50)		 ,
+    customerID		INT			 ,
+
+    PRIMARY KEY(orderID),
+    CONSTRAINT FK_order_custID FOREIGN KEY(customerID) REFERENCES Customer(customerID)
+);
+
+
+CREATE TABLE Payment(
+    paymentID		INT		 AUTO_INCREMENT,
+    paymentDate		DATE             NOT NULL,
+    paymentMethod       VARCHAR(50)	 	 ,
+    orderID		INT			 ,
+
+    PRIMARY KEY(paymentID),
+    CONSTRAINT FK_payment_orderID FOREIGN KEY(orderID) REFERENCES Orders(orderID)
+);
+
+
+CREATE TABLE Item(
+    itemID		INT		 AUTO_INCREMENT,
+    itemName		VARCHAR(1000)                  ,
+    unitPrice	        DOUBLE(6,2)	 	       ,
+    image		BLOB			       ,
+    staffID		INT			       ,
+
+    PRIMARY KEY(itemID),
+    CONSTRAINT FK_item_staffID FOREIGN KEY(staffID) REFERENCES Staff(staffID)
+
+);
+
+
+
+CREATE TABLE Order_Detail(
+    orderID	    	INT             	      ,
+    itemID              INT                           ,
+    quantity	        INT	                      ,
+    price          	DOUBLE(6,2)     	      ,
+    remark		VARCHAR(1000)		      ,
+    PRIMARY KEY(orderID, itemID)       		      ,
+
+    CONSTRAINT FK_detail_orderID FOREIGN KEY(orderID) REFERENCES Orders(orderID),
+    CONSTRAINT FK_detail_itemID FOREIGN KEY(itemID) REFERENCES Item(itemID)
+);

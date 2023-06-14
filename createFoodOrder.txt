@@ -15,7 +15,6 @@ CREATE TABLE Staff(
     staffID             INT		AUTO_INCREMENT,
     staffName           VARCHAR(500)    NOT NULL,
     staffEmail          VARCHAR(200)    NOT NULL,
-    staffType           VARCHAR(100)    NOT NULL,
     staffPassword       VARCHAR(100)    NOT NULL,
 
     PRIMARY KEY(staffID)

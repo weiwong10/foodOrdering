@@ -27,7 +27,7 @@
 	<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh">
 		<form id="border" class="border shadow p-3 rounded" action="registerProcess.php" method="post" style="width: 450px;" enctype="multipart/form-data">
 
-		  <h1 class="text-center p-3">Car Park Reservation</h1>
+		  <h1 class="text-center p-3">Register Page</h1>
 	
 		  <!--To show the error message when the username is blank-->
 		  

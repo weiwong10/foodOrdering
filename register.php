@@ -10,7 +10,7 @@
 
 <style>
 	body{
-	background-image: url("image/register.jpg");
+	background-image: url("image/donut3.jpg");
 	background-repeat: no repeat;
 	background-attachment: fixed;
 	background-size: cover;	
@@ -67,11 +67,6 @@
 		    <label for="contactNo" class="form-label">Phone Number </label>
 		    <input type="text" name="contactNo" placeholder="e.g. 0126880717" class="form-control" id="contactNo">
 		    </div>
-		  
-		  <div class="mb-3">
-		    <label for="icNo" class="form-label">IC No </label>
-		    <input type="text" name="icNo" placeholder="e.g. 980329-01-5846" class="form-control" id="icNo">
-		  </div>
 		  
 		  <div class="mb-3">
 			<label>Password</label>

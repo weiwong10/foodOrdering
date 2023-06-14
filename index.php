@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Food Ordering System</title>
+    <title>Donutopia</title>
     <link rel="stylesheet" href="css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
@@ -11,7 +11,7 @@
     <div class="main">
         <div class="navbar">
             <div class="icon">
-                <h3 class="logo">Food<span>Ordering</span></h3>
+                <h3 class="logo">The<span>Donutopia</span></h3>
             </div>
 
             <div class="menu">
@@ -26,13 +26,12 @@
 
         </div> 
         <div class="content">
-            <h1>Food<br><span>Ordering</span> System</h1>
+            <h1>Online<br><span>Ordering</span> </h1>
             <p class="par"> <br> 
-            A food ordering system designed for a single restaurant is an online platform <br>
-            that enables customers to browse the menu, select their desired dishes,<br> 
-            and place orders specifically from that restaurant. It offers a streamlined <br> 
-            and user-friendly interface tailored to the restaurant's offerings, providing <br>
-            convenience and efficiency for customers to order their meals with ease.            
+            Donutopia is the ultimate online donut ordering system, offering a wide <br>
+            selection of delectable treats for users to choose from. Convenient and <br>
+            user-friendly, Donutopia makes it easy to explore and order a variety of <br>
+            mouthwatering donuts. Satisfaction guaranteed with every bite.
             </p>
 
                 <button class="cn"><a href="register.php">JOIN US</a></button>

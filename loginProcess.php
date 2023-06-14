@@ -25,7 +25,7 @@ include "connect.php";
 		}
 		else
 		{
-					$sql = "SELECT * FROM users WHERE email = '".$username."' AND password = '".$password."'";
+					$sql = "SELECT * FROM customer WHERE email = '".$username."' AND password = '".$password."'";
 
 					$result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
 
@@ -35,9 +35,8 @@ include "connect.php";
 						$row = mysqli_fetch_assoc($result);
 						if($row['email'] === $username && $row['password'] === $password)
 						{
-
 								//To store the data into the session[admin_username] for future use
-								$_SESSION['username'] = $username;
+								$_SESSION['username'] = $row['customerID'];
 
 								//To go for the customer login page
 								header("Location: users/index.php");
@@ -52,7 +51,7 @@ include "connect.php";
 					}
 					else
 					{						
-						$sqlAdmin = "SELECT * FROM admin WHERE name = '".$username."' AND password = '".$password."'";
+						$sqlAdmin = "SELECT * FROM staff WHERE staffEmail = '".$username."' AND staffPassword = '".$password."'";
 
 						$resultAdmin = mysqli_query($conn,$sqlAdmin) or die(mysqli_error($conn));
 

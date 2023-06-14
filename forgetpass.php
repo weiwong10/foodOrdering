@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     //{
     //    die("connection_error");
     //}
-    $sql="select * from users where email= '".$usr. "' AND contactNo = '".$phone. "'";
+    $sql="select * from customer where email= '".$usr. "' AND contactNo = '".$phone. "'";
 	$result=mysqli_query($conn,$sql);
 	$row=mysqli_fetch_array($result);
 

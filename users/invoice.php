@@ -9,9 +9,8 @@ include("../connect.php");
   }
 if (isset($_GET['id'])) {
     $orderid = $_GET['id'];
-} else {
-    // handle the case where the "orderid" key is not set
-}
+} 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +19,7 @@ if (isset($_GET['id'])) {
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/png" href="../image/pets.png">
+<link rel="shortcut icon" type="image/png" href="../image/#.png">
 <title>DONUTOPIA </title>
 <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 <!-- Web Fonts
@@ -37,17 +36,18 @@ if (isset($_GET['id'])) {
 
 <?php
 	
-	$queryOrder = "SELECT * FROM orders o, order_detail d, item i WHERE o.orderID = d.orderID AND d.itemID = i.itemID AND o.ordersID =$orderid";
+	$queryOrder = "SELECT * FROM payment p
+    JOIN orders o ON p.orderID = o.orderID
+    JOIN customer c ON o.customerID = c.customerID
+    JOIN order_detail a ON a.orderID = o.orderID
+    JOIN item d ON a.itemID =d.itemID
+    WHERE p.orderID = $orderid";
 	$resultOrder = mysqli_query($conn,$queryOrder);
-
-    $queryPayment = "SELECT * FROM orders o, customer c, payment p WHERE o.customerID = c.customerID AND p.orderID = o.orderID AND o.ordersID =$orderid";
-	$resultPayment = mysqli_query($conn,$queryOrder);
 
     
 	if(mysqli_num_rows($resultOrder)>0)
 	{
-		$rowOrder = mysqli_fetch_assoc($resultOrder);
-        $rowPayment = mysqli_fetch_assoc($resultPayment);
+        $rowPayment = mysqli_fetch_assoc($resultOrder);
 
 	?>
 <!-- Container -->
@@ -57,7 +57,7 @@ if (isset($_GET['id'])) {
   <header>
   <div class="row align-items-center">
     <div class="col-sm-7 text-center text-sm-left mb-3 mb-sm-0">
-      <img id="logo" src="../image/logo1.png" title="Ospoly" alt="ABBY Logo" style="width: 15%; height: 15%;"/>
+      <img id="logo" src="../image/2.png" title="Ospoly" alt="ABBY Logo" style="width: 18%; height: 18%;"/>
     </div>
     <div class="col-sm-5 text-center text-sm-right">
       <h4 class="text-7 mb-0">Receipt</h4>
@@ -74,7 +74,7 @@ if (isset($_GET['id'])) {
     
   </div>
   <div class="row">
-    <div class="col-sm-12 text-sm-center"><h3 style="padding-top: 15px;">INVOICE THE DONUTOPIA</h3></div>
+    <div class="col-sm-12 text-sm-center"><h3 style="padding-top: 15px;">INVOICE DONUTOPIA</h3></div>
     
   </div>
   <hr style="background-color: black;">
@@ -114,7 +114,7 @@ if (isset($_GET['id'])) {
         </thead>
           <tbody>
 			  <?php 
-				$query1 = "SELECT * FROM payment p, orders o, customer c, order_detail d, item i WHERE p.ordersID=o.ordersID AND d.ordersID=o.ordersID AND d.itemID=i.itemID AND o.ordersID =$orderid";
+				$query1 = "SELECT * FROM payment p, orders o, customer c, order_detail d, item i WHERE p.orderID=o.orderID AND d.orderID=o.orderID AND d.itemID=i.itemID AND c.customerID = o.customerID AND o.orderID  =$orderid";
                 $result1 = mysqli_query($conn,$query1);
                 if(mysqli_num_rows($result1)>0)
                 { $counter=1;
@@ -134,7 +134,7 @@ if (isset($_GET['id'])) {
       <tfoot class="card-footer">
             <tr>
               <td colspan="4" class="text-right"><strong>Total:</strong></td>
-              <td class="text-right">RM <?php echo $row['amount']; ?></td>
+              <td class="text-right">RM <?php echo $rowPayment['amount']; ?></td>
             </tr>
       
       </tfoot>
@@ -151,7 +151,7 @@ if (isset($_GET['id'])) {
   <div class="btn-group btn-group-sm d-print-none"> 
   <a href="javascript:window.print()" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-print"></i> Print</a> 
   <a href="#" id="download" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-download"></i> Download</a> 
-  <a href="dog_product.php" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-chevron-left"></i> Back</a>   
+  <a href="menu.php" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-chevron-left"></i> Back</a>   
   </div>
   </footer> 
 

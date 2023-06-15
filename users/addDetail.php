@@ -60,7 +60,7 @@ if (isset($_POST['checkout'])){
 // clear shopping cart
 	unset($_SESSION['cart2']);
     $success_message = "Orders made successfully. Proceed to payment.";
-    $redirect_url = "payment.php?amount=" . urlencode($totalAmount) . "&orderid=" . urlencode($ordersID);
+    $redirect_url = "payment.php?orderid=" . urlencode($ordersID);
     echo "<script>alert('$success_message'); window.location.href='$redirect_url';</script>";
     exit();
 

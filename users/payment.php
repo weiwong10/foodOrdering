@@ -1,14 +1,16 @@
 <?php
 include("../connect.php");
  session_start();
-  if (isset($_SESSION["username"])) {
-    $id = $_SESSION["username"];
-  } else {
-    header("Location: ../index.php");
-    exit();
-  }
+if(isset($_SESSION["username"]))
+{
+	$id= $_SESSION["username"];
+	
+}
+else{
+	header('Location: ../index.php');
+}
 	  // retrieve customer name from database
-$stmt = $conn->prepare("SELECT * FROM customer WHERE customerID = ?");
+$stmt = $conn->prepare("SELECT name, email, contactNo FROM customer WHERE customerID = ?");
 $stmt->bind_param("i", $id);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -20,20 +22,12 @@ if ($result->num_rows > 0) {
   $telephone = $row["contactNo"];
 }
 
-// Get the amount and order ID and service charge values from the URL query string
-if (isset($_GET['amount'])) {
-    $amount = $_GET['amount'];
-} else {
-    // handle the case where the "amount" key is not set
-}
-
+// Get the  order ID and service charge values from the URL query string
 if (isset($_GET['orderid'])) {
     $orderid = $_GET['orderid'];
-} else {
-    // handle the case where the "orderid" key is not set
-}
+} 
 
-$result1 =mysqli_query($conn,"INSERT INTO payment (paymentDate, payMethod, ordersID) VALUES (NOW(),'Online Banking','$orderid')");
+$result1 =mysqli_query($conn,"INSERT INTO payment (paymentDate, paymentMethod, orderID) VALUES (NOW(),'Online Banking','$orderid')");
 
 
 ?>
@@ -111,7 +105,7 @@ $result1 =mysqli_query($conn,"INSERT INTO payment (paymentDate, payMethod, order
 <script>
 function redirectToOtherPage() {
     alert("Payment successful!");
-    window.location.href = "invoicePro.php?id=<?php echo $orderid ?>";
+    window.location.href = "invoice.php?id=<?php echo $orderid ?>";
 }
 </script>
 	

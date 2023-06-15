@@ -17,16 +17,10 @@
 	<nav class="navbar">
     <ul>
         
-        <li><a href="#">About Us</a></li>
-        <!-- <li><a href="#">Grooming Service +</a>
-            <ul>
-                <li><a href="dog_grooming.php">Dog Grooming</a></li>
-                <li><a href="cat_grooming.php">Cat Grooming</a></li>
-            </ul>
-        </li> -->
+        <li><a href="index.php">About Us</a></li>
 		<li><a href="menu.php">Menu</a></li>
-        <li><a href="#">My Cart</a></li>
-		<li><a href="#">Order History</a></li>
+        <li><a href="addCart.php">My Cart</a></li>
+		<li><a href="orderHistory.php">Order History</a></li>
         <li><a href="profile.php">Profile</a></li>
         <li><a href="../logout.php">Logout</a></li>
     </ul>

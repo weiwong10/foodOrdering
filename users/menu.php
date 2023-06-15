@@ -21,7 +21,7 @@ $result = $conn->query($sql);
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="shortcut icon" type="image/png" href="../image/pets.png">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-<link rel="stylesheet" type="text/css" href="../css/product.css">
+<link rel="stylesheet" type="text/css" href="../css/menu.css">
 <title>Abby Shop</title>
 </head>
 
@@ -41,11 +41,11 @@ $result = $conn->query($sql);
 			<div class="caption">
 				<p class="productName"><b><?php echo $row["itemName"] ?></b></p>
 				<p class="price"><b>Price : RM <?php echo $row["unitPrice"] ?></b></p>
-				<p class="price"><b>Description :</b></p>
+				<p class="price"><b>Ingredient :</b></p>
 				<p class="price"><?php echo $row["ingredient"] ?></p>
-				<input type='hidden' name='productID' value='<?php echo $row["itemID"] ?>'/>
+				<input type='hidden' name='itemID' value='<?php echo $row["itemID"] ?>'/>
 				<input type='hidden' name='unitPrice' value='<?php echo $row["unitPrice"] ?>'/>
-				<input type='hidden' name='productName' value='<?php echo $row["itemName"] ?>'/>	
+				<input type='hidden' name='itemName' value='<?php echo $row["itemName"] ?>'/>	
 				<p class="price" >Quantity :<input type="number" name="quantity" id="quantity" value="0" min="0" class="form-control" ></p>
 				
 

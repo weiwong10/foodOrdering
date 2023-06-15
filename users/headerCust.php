@@ -24,7 +24,7 @@
                 <li><a href="cat_grooming.php">Cat Grooming</a></li>
             </ul>
         </li> -->
-		<li><a href="#">Menu</a></li>
+		<li><a href="menu.php">Menu</a></li>
         <li><a href="#">My Cart</a></li>
 		<li><a href="#">Order History</a></li>
         <li><a href="profile.php">Profile</a></li>

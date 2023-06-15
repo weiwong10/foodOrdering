@@ -40,7 +40,7 @@ else{
 </head>
 
 <body>
-<?php include("headerCart.php") ?>
+<?php include("headerCust.php") ?>
 
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="container text-center text-md-left" data-aos="fade-up">

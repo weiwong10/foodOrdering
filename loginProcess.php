@@ -60,11 +60,11 @@ include "connect.php";
 						{
 
 							$admin = mysqli_fetch_assoc($resultAdmin);
-							if($admin['name'] == $username && $admin['password'] == $password)
+							if($admin['staffEmail'] == $username && $admin['staffPassword'] == $password)
 							{
 
 									//To store the data into the session[admin_username] for future use
-									$_SESSION['username'] = $admin['adminID'];
+									$_SESSION['username'] = $admin['staffID'];
 
 									//To go for the customer login page
 									header("Location: admin/adminMain.php");
@@ -72,14 +72,11 @@ include "connect.php";
 							}
 						}
 						else
-						{
-							
+						{		
 							header("Location: index.php?error=Incorrect Username and Password");
 						}
 
 					}
-
-			
 
 		}
 	}

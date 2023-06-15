@@ -13,7 +13,7 @@ if (isset($_POST['checkout'])){
   // calculate package IDs and total prices from cart
   $itemID = array();
   $totalAmount = array();
-  foreach ($_SESSION["cart1"] as $item) {
+  foreach ($_SESSION["cart2"] as $item) {
     $itemID[] = $item["itemID"];
     $totalAmount[] = $item["quantity"] * $item["unitPrice"];
   }
@@ -21,15 +21,15 @@ if (isset($_POST['checkout'])){
 
  // calculate total amount
   $totalAmount = 0;
-  foreach ($_SESSION["cart1"] as $item) {
+  foreach ($_SESSION["cart2"] as $item) {
     $subtotal = $item["quantity"] * $item["unitPrice"];
     $totalAmount += $subtotal;
   }
   
   // insert order into database
-  $stmt = $conn->prepare("INSERT INTO orders (customerID, orderDate, amount, orderStatus) VALUES (?, ?, ?, ?)");
+  $stmt = $conn->prepare("INSERT INTO orders (customerID, orderDate, amount, orderStatus) VALUES (?, ?, ?,'Pending')");
   $orderDate = date('Y-m-d H:i:s');
-  $stmt->bind_param("iss", $customerID, $orderDate, $totalAmount, 'Pending');
+  $stmt->bind_param("iss", $customerID, $orderDate, $totalAmount);
 
   if ($stmt->execute()) {
     $ordersID = $stmt->insert_id;
@@ -37,7 +37,7 @@ if (isset($_POST['checkout'])){
     // insert appointment details into database
     $stmt = $conn->prepare("INSERT INTO order_detail (orderID, itemID, quantity, price) VALUES (?, ?, ?, ?)");
 
-    foreach ($_SESSION["cart1"] as $item) 
+    foreach ($_SESSION["cart2"] as $item) 
 	{
     $itemID = $item["itemID"];
     $quantity = $item["quantity"];
@@ -58,7 +58,7 @@ if (isset($_POST['checkout'])){
 	  
     
 // clear shopping cart
-	unset($_SESSION['cart1']);
+	unset($_SESSION['cart2']);
     $success_message = "Orders made successfully. Proceed to payment.";
     $redirect_url = "payment.php?amount=" . urlencode($totalAmount) . "&orderid=" . urlencode($ordersID);
     echo "<script>alert('$success_message'); window.location.href='$redirect_url';</script>";

@@ -9,8 +9,8 @@ if(isset($_SESSION["username"]))
 else{
 	header('Location: ../index.php');
 }
-if(!isset($_SESSION['cart1'])){
-    $_SESSION['cart1'] = array();
+if(!isset($_SESSION['cart2'])){
+    $_SESSION['cart2'] = array();
 }
 ?>
 
@@ -28,7 +28,7 @@ if(!isset($_SESSION['cart1'])){
 	<?php
 		if (isset($_POST['add_to_cart'])) 
 		{
-    		$session_array_id = array_column($_SESSION['cart1'], "itemID");
+    		$session_array_id = array_column($_SESSION['cart2'], "itemID");
 
 			if (!in_array($_POST['itemID'], $session_array_id)) 
 			{
@@ -38,12 +38,12 @@ if(!isset($_SESSION['cart1'])){
 					"unitPrice" => $_POST['unitPrice'],
             		"quantity" => $_POST['quantity'],
         		);
-					$_SESSION['cart1'][] = $session_array;
+					$_SESSION['cart2'][] = $session_array;
     		}
     		else 
 			{
 				// If the package is already in the cart, update the quantity 
-        		foreach ($_SESSION['cart1'] as &$item) 
+        		foreach ($_SESSION['cart2'] as &$item) 
 				{
             		if ($item['itemID'] == $_POST['itemID']) 
 					{
@@ -78,9 +78,9 @@ if(!isset($_SESSION['cart1'])){
 </thead>
   ";
 
-if(!empty($_SESSION['cart1'])){
+if(!empty($_SESSION['cart2'])){
 	$counter = 1;
-  foreach($_SESSION['cart1'] as $key => $value){
+  foreach($_SESSION['cart2'] as $key => $value){
 
     $output .="
     <tr>
@@ -107,13 +107,13 @@ if(!empty($_SESSION['cart1'])){
 </td>
 ";
 $total_amount = 0;
-foreach ($_SESSION['cart1'] as $value) {
+foreach ($_SESSION['cart2'] as $value) {
     $total_amount += $value['quantity'] * $value['unitPrice'];
 }
 	  $counter++;
 }
 
- "
+ $output .="
     <tr>
         <td colspan='3'></td>
         <td><b>Total Amount : </b></td>
@@ -126,7 +126,7 @@ foreach ($_SESSION['cart1'] as $value) {
 
 <form action='addDetail.php' method='post' style='float: right; '>";
 
-	foreach ($_SESSION['cart1'] as $key => $value) {
+	foreach ($_SESSION['cart2'] as $key => $value) {
     $output .= "
 		<input type='hidden' name='itemID[$key]' value='{$value['itemID']}'>
          <input type='hidden' name='totalAmount[$key]' value='" . number_format($value['unitPrice'] * $value['quantity'], 2) . "'>
@@ -144,8 +144,8 @@ $output .= "
 
   }
 if (isset($_POST['update_quantity'])) {
-  if (is_array($_SESSION['cart1'])) {
-    foreach ($_SESSION['cart1'] as &$item) {
+  if (is_array($_SESSION['cart2'])) {
+    foreach ($_SESSION['cart2'] as &$item) {
       if ($item['itemID'] == $_POST['itemID']) {
         $item['quantity'] = $_POST['quantity'];
         break;
@@ -158,9 +158,9 @@ if (isset($_POST['update_quantity'])) {
 	
 		
 if(isset($_GET['action']) && $_GET['action']=="remove" && isset($_GET['id'])){
-  foreach($_SESSION['cart1'] as $key => $value){
+  foreach($_SESSION['cart2'] as $key => $value){
     if($value['itemID']==$_GET['id']){
-      unset($_SESSION['cart1'][$key]);
+      unset($_SESSION['cart2'][$key]);
     }
   }
   header('Location: ' . $_SERVER['PHP_SELF']);

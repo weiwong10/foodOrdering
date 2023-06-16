@@ -15,8 +15,8 @@ $orderID = isset($_GET['orderID']) ? $_GET['orderID'] : '';
 $orderDate = isset($_GET['orderDate']) ? $_GET['orderDate'] : '';
 
 // Construct the SQL query with the search parameters
-$sql = "SELECT * FROM order o 
-        INNER JOIN order_datail a ON o.orderID = a.orderID 
+$sql = "SELECT * FROM orders o 
+        INNER JOIN order_detail a ON o.orderID = a.orderID 
         INNER JOIN item p ON p.itemID = a.itemID ";
 
 // Add the search conditions if the parameters are provided
@@ -41,7 +41,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($page - 1) * $resultsPerPage;
 
 // Construct the SQL query with pagination
-$sql = "SELECT * FROM order o 
+$sql = "SELECT * FROM orders o 
         INNER JOIN order_detail a ON o.orderID = a.orderID 
         INNER JOIN item p ON p.itemID = a.itemID ";
 
@@ -90,25 +90,25 @@ $totalPages = ceil($totalResults / $resultsPerPage);
 		
 			  <p style="margin-top: 120px; "><center><b style="font-size: 20px;">ORDER HISTORY</b></center></p>
 	
-				<div class="container" style="margin-top: 50px;">
-  <form action="" method="GET" class="mb-3">
-    <div class="row">
-      <div class="col-md-2">
-        <input type="text" name="orderID" placeholder="Search by Order ID" class="form-control">
-      </div>
-      <div class="col-md-2">
-        <input type="date" name="orderDate" placeholder="Search by Order Date" class="form-control">
-      </div>
-      <div class="col-md-2">
-        <button type="submit" class="btn btn-primary">Search</button>
-		<a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="btn btn-secondary" style="margin-left: 10px;">Reset</a>
-      </div>
+    <div class="container" style="margin-top: 50px;">
+    <form action="" method="GET" class="mb-3">
+        <div class="row">
+        <div class="col-md-2">
+            <input type="text" name="orderID" placeholder="Search by Order ID" class="form-control">
+        </div>
+        <div class="col-md-2">
+            <input type="date" name="orderDate" placeholder="Search by Order Date" class="form-control">
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary">Search</button>
+            <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="btn btn-secondary" style="margin-left: 10px;">Reset</a>
+        </div>
+        </div>
+    </form>
+    <table class="table table-hover text-center">
+        <!-- table headers and rows -->
+    </table>
     </div>
-  </form>
-  <table class="table table-hover text-center">
-    <!-- table headers and rows -->
-  </table>
-</div>
 
 				
 

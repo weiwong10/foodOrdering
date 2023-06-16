@@ -26,7 +26,13 @@
         </li> -->
 		<li><a href="adminMain.php">Home</a></li>
         <li><a href="manageMenu.php">Manage Menu</a></li>
-		<li><a href="manageOrder.php">Manage Customer's Order</a></li>
+		<!-- <li><a href="manageOrder.php">Manage Customer's Order</a></li> -->
+        <li><a href="#">Customer's Order +</a>
+            <ul>
+                <li><a href="manageOrder.php">Manage Order</a></li>
+                <li><a href="orderHistory.php">Order History</a></li>
+            </ul>
+        </li>
         <li><a href="profile.php">Profile</a></li>
         <li><a href="../logout.php">Logout</a></li>
     </ul>

@@ -11,17 +11,17 @@ else{
 	header('Location: ../index.php');
 }
 
-if(isset($_GET['status']) && isset($_GET['orderID']))
-{
-	$status = $_GET['status'];
-	$orderID = $_GET['orderID'];
+// if(isset($_GET['status']) && isset($_GET['orderID']))
+// {
+// 	$status = $_GET['status'];
+// 	$orderID = $_GET['orderID'];
 
-	mysqli_query($conn,"UPDATE orders SET orderStatus='$status'  WHERE orderID='$orderID'");
+// 	mysqli_query($conn,"UPDATE orders SET orderStatus='$status'  WHERE orderID='$orderID'");
 	
 	
-	header("Location: manageOrder.php");
+// 	header("Location: manageOrder.php");
 	
-}
+// }
 
 ?>
 
@@ -65,7 +65,7 @@ if(isset($_GET['status']) && isset($_GET['orderID']))
 			<tbody>
 			<?php
 	
-			$ret = mysqli_query($conn,"SELECT orderID, name, contactNo, orderStatus FROM orders o, customer c WHERE o.customerID = c.customerID AND orderStatus = 'Pending'");
+			$ret = mysqli_query($conn,"SELECT orderID, name, email, contactNo, orderStatus FROM orders o, customer c WHERE o.customerID = c.customerID AND orderStatus = 'Pending'");
 
 			$i=1;
 		   
@@ -79,13 +79,13 @@ if(isset($_GET['status']) && isset($_GET['orderID']))
 						<td><?php echo $row['contactNo'] ?></td>
 						<td><?php echo $row['orderStatus'] ?></td>
 						<td>
-						<select  id="statusSelect" onChange="status_update(this.options[this.selectedIndex].value, '<?php echo $row['orderID'] ?>')">
+						<select  id="statusSelect" onChange="status_update(this.options[this.selectedIndex].value, '<?php echo $row['orderID'] ?>', '<?php echo $row['name']?>' , '<?php echo $row['email']?>')">
 						<option value="">Update Status</option>	
-						<option value="Done">Read to pick up</option>
+						<option value="Shipped">Shipped out</option>
 						</select>
 						</td>
 						<td>
-          				<a href="custOrderDetail.php?id=<?php echo $row['orderID'] ?>" class="link-dark" style="text-decoration: none;"><i class="fa fa-download"></i>&nbsp;Details</a>
+          				<a href="custReceipt.php?id=<?php echo $row['orderID'] ?>" class="link-dark" style="text-decoration: none;"><i class="fa fa-download"></i>&nbsp;Details</a>
         				</td>
 
 					</tr>
@@ -97,12 +97,12 @@ if(isset($_GET['status']) && isset($_GET['orderID']))
 		</table>								
 	</div>
 	<script type="text/javascript">
-		function status_update(value,  orderID) 
+		function status_update(value,  orderID, name, email) 
 		{
     		if (confirm("Do you want to " + value + "?")) 
 			{
-				let url = "http://localhost/foodOrdering/admin/manageOrder.php";
-				window.location.href = url + "?status=" + value + "&orderID=" + orderID;
+				let url = "http://localhost/foodOrdering/admin/custOrderDetail.php";
+				window.location.href = url + "?status=" + value + "&orderID=" + orderID + "&name=" + name + "&email=" + email;
     		} else {
         		// Set the selected index back to 0
 				document.getElementById("statusSelect").selectedIndex = 0;

@@ -15,7 +15,7 @@ if(isset($_GET['itemID']) && isset($_GET['action']) && $_GET['action'] == "updat
         $itemID = $_POST['itemID'];
         $itemName=$_POST['itemName'];
         $unitPrice=$_POST['unitPrice'];
-        $ingredient =$_POST['ingredient'];
+        $stock =$_POST['stock'];
       
       
         $insert_image = $_FILES['image']['name'];
@@ -34,7 +34,7 @@ if(isset($_GET['itemID']) && isset($_GET['action']) && $_GET['action'] == "updat
                 $image_update_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
 
-                $query= "UPDATE item SET itemName = '$itemName', unitPrice = '$unitPrice', ingredient = '$ingredient' WHERE itemID='$itemID'";
+                $query= "UPDATE item SET itemName = '$itemName', unitPrice = '$unitPrice', stockQuantityProduct = '$stock' WHERE itemID='$itemID'";
                 mysqli_query($conn, $query);
 
                 echo "<script>alert('Update Success');</script>";
@@ -45,7 +45,7 @@ if(isset($_GET['itemID']) && isset($_GET['action']) && $_GET['action'] == "updat
         }
         else{
 
-            $query= "UPDATE item SET itemName = '$itemName', unitPrice = '$unitPrice', ingredient = '$ingredient' WHERE itemID ='$itemID'";
+            $query= "UPDATE item SET itemName = '$itemName', unitPrice = '$unitPrice', stockQuantityProduct = '$stock' WHERE itemID ='$itemID'";
             mysqli_query($conn, $query);
 
             echo "<script>alert('Update Success');</script>";
@@ -86,7 +86,7 @@ if(isset($_GET['itemID']) && isset($_GET['action']) && $_GET['action'] == "updat
     
       <div class="mb-3">
         <label class="form-label">Item ID</label>
-        <input type="text" class="form-control" name="itemID" value="<?php echo $row['itemID']?>" required>
+        <input type="text" class="form-control" name="itemID" value="<?php echo $row['itemID']?>" required readonlys>
       </div>
 
       <div class="mb-3">
@@ -100,8 +100,8 @@ if(isset($_GET['itemID']) && isset($_GET['action']) && $_GET['action'] == "updat
       </div>
 
       <div class="mb-3">
-        <label class="form-label">Ingredient</label>
-        <input type="text" class="form-control" name="ingredient" value="<?php echo $row['ingredient']?>" required>
+        <label class="form-label">Stock Quantity</label>
+        <input type="number" class="form-control" name="stock" value="<?php echo $row['stockQuantityProduct']?>" required>
       </div>
 
       <div class="form-group">

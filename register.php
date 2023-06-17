@@ -68,6 +68,11 @@
 		    <input type="text" name="contactNo" placeholder="e.g. 0126880717" class="form-control" id="contactNo">
 		    </div>
 		  
+			<div class="mb-3">
+		    <label for="contactNo" class="form-label">Address </label>
+		    <input type="text" name="address" placeholder="1/3 Jalan Utama 1, Taman Utaman, 55100 Kuala Lumpur" class="form-control" id="contactNo">
+		    </div>
+
 		  <div class="mb-3">
 			<label>Password</label>
 			<input type="password" name="password_1" class="form-control">

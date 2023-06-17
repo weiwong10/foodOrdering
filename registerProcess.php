@@ -28,6 +28,7 @@ if (isset($_POST['reg_user'])) {
   $gentle = test_input($_POST['gentle']);
   $dob = test_input(date('Y-m-d', strtotime($_POST['dateofbirth'])));
   $contactNo = test_input($_POST['contactNo']);
+  $address = test_input($_POST['address']);
   $password_1 = test_input($_POST['password_1']);
   $password_2 = test_input($_POST['password_2']);
 
@@ -47,7 +48,10 @@ if (isset($_POST['reg_user'])) {
 
   elseif (empty($contactNo)) { 
     header("Location: register.php?error=Phone Number is required"); }
-    
+
+  elseif (empty($address)) { 
+    header("Location: register.php?error=Address is required"); }
+        
   elseif (empty($password_1)) { 
 	header("Location: register.php?error=Password is required");  }
 	

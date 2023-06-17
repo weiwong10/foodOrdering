@@ -31,7 +31,7 @@
             <th scope="col">Item ID</th>
             <th scope="col">Item Name</th>
             <th scope="col">Unit Price</th>
-            <th scope="col">Ingredient</th>
+            <th scope="col">Stock Quantity</th>
             <th scope="col">Image</th>
             <th scope="col">Operations</th>
             </tr>
@@ -50,10 +50,11 @@
                     <th scope="row">'.$row['itemID'].'</th>
                     <td>'.$row['itemName'].'</td>
                     <td>' .$row['unitPrice'].'</td>
-                    <td>'.$row['ingredient'].'</td>
+                    <td>'.$row['stockQuantityProduct'].'</td>
                     <td><img src="data:image;base64,'.base64_encode($row['image']).'"alt="Image"; " width="125px" height="125px""></td>
                     <td>
                     <button class="btn btn-primary"><a href="menuProcess.php?itemID='.$row['itemID'].'&action=update" class="text-light">Update</a></button>
+                    <button class="btn btn-primary"><a href="addStock.php?itemID='.$row['itemID'].'&action=add" class="text-light">Add Stock</a></button>
                     </td>
                     </tr>';
                 }

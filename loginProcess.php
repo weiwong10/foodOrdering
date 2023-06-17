@@ -25,7 +25,7 @@ include "connect.php";
 		}
 		else
 		{
-					$sql = "SELECT * FROM customer WHERE email = '".$username."' AND password = '".$password."'";
+					$sql = "SELECT * FROM customer WHERE email = '".$username."' AND password = '".md5($password)."'";
 
 					$result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
 
@@ -33,7 +33,7 @@ include "connect.php";
 					{
 
 						$row = mysqli_fetch_assoc($result);
-						if($row['email'] === $username && $row['password'] === $password)
+						if($row['email'] === $username && $row['password'] === md5($password))
 						{
 								//To store the data into the session[admin_username] for future use
 								$_SESSION['username'] = $row['customerID'];

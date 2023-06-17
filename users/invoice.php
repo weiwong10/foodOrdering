@@ -19,7 +19,7 @@ if (isset($_GET['id'])) {
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/png" href="../image/#.png">
+<link rel="shortcut icon" type="image/png" href="../image/candy11.png">
 <title>Sweet Sensations </title>
 <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 <!-- Web Fonts

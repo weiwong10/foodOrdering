@@ -45,7 +45,7 @@ $result1 =mysqli_query($conn,"INSERT INTO payment (paymentDate, paymentMethod, d
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" type="image/png" href="../image/pets.png">
+	<link rel="shortcut icon" type="image/png" href="../image/candy11.png">
     <!-- custom css file link  -->
     <link rel="stylesheet" href="../css/payment.css">
 	<title>Sweet Sensations</title>

@@ -23,7 +23,7 @@ if(!isset($_SESSION['cart2'])){
 <link rel="shortcut icon" type="image/png" href="../image/pets.png">
 	<!--Bootstrap-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-<title>DONUTOPIA</title>
+<title>Sweet Sensations</title>
 	
 	<?php
 		if (isset($_POST['add_to_cart'])) 
@@ -59,7 +59,7 @@ if(!isset($_SESSION['cart2'])){
 <body>
 	<?php include('headerCust.php');?>
 	<div class="container">
-  <h2 class = "text-center" style="margin-top: 150px;"> Product</h2>
+  <h2 class = "text-center" style="margin-top: 110px;"> ITEM</h2><br>
   <?php
 
   $output = "";
@@ -69,7 +69,7 @@ if(!isset($_SESSION['cart2'])){
 <thead class='table-dark'>
 <tr>
 <th scope='col'>No.</th>
-<th scope='col'>Donut Name</th>
+<th scope='col'>Candy</th>
 <th scope='col'>Unit Price</th>
 <th scope='col'>Quantity</th>
 <th scope='col'>Total price</th>
@@ -112,7 +112,8 @@ foreach ($_SESSION['cart2'] as $value) {
 }
 	  $counter++;
 }
-
+$serviceCharge = $total_amount * 0.1;
+$amount_after_charge = $total_amount + $serviceCharge;
  $output .="
     <tr>
         <td colspan='3'></td>
@@ -121,7 +122,20 @@ foreach ($_SESSION['cart2'] as $value) {
         <td>
         </td>
     </tr>
-
+	<tr>
+        <td colspan='3'></td>
+        <td><b>Delivery Charge (10%): </b></td>
+        <td>RM " . number_format($serviceCharge,2) . "</td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td colspan='3'></td>
+        <td><b>Amount after Charging: </b></td>
+        <td>RM " . number_format($amount_after_charge,2) . "</td>
+        <td>
+        </td>
+    </tr>
 </table>
 
 <form action='addDetail.php' method='post' style='float: right; '>";
@@ -134,6 +148,8 @@ foreach ($_SESSION['cart2'] as $value) {
 }
 	
 $output .= "
+	<input type='hidden' name='amountAfterCharge' value='" . number_format($amount_after_charge, 2) . "'>
+	<input type='hidden' name='serviceCharge' value='" . number_format($serviceCharge, 2) . "'>
     <button type='submit' name='checkout' class='btn btn-outline-secondary' onclick='return confirmCheckout()'>Checkout</button>
 	
 </form>

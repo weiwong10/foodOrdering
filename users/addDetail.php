@@ -11,6 +11,8 @@ include("../connect.php");
 if (isset($_POST['checkout'])){
 
   // calculate package IDs and total prices from cart
+  $amount_after_charge = $_POST['amountAfterCharge'];
+  $serviceCharge = $_POST['serviceCharge'];
   $itemID = array();
   $totalAmount = array();
   foreach ($_SESSION["cart2"] as $item) {
@@ -20,11 +22,18 @@ if (isset($_POST['checkout'])){
   
 
  // calculate total amount
+  $totalPrice = 0;
   $totalAmount = 0;
   foreach ($_SESSION["cart2"] as $item) {
     $subtotal = $item["quantity"] * $item["unitPrice"];
-    $totalAmount += $subtotal;
+    $totalPrice += $subtotal;
   }
+	
+  // calculate total amount
+  foreach ($_SESSION["cart2"] as $item) {
+    $totalAmount += $item["quantity"] * $item["unitPrice"];
+  }
+	
   
   // insert order into database
   $stmt = $conn->prepare("INSERT INTO orders (customerID, orderDate, amount, orderStatus) VALUES (?, ?, ?,'Pending')");
@@ -59,8 +68,10 @@ if (isset($_POST['checkout'])){
     
 // clear shopping cart
 	unset($_SESSION['cart2']);
+    $amount_after_charge = $_POST['amountAfterCharge'];
+	$seviceCharge = $_POST['serviceCharge'];
     $success_message = "Orders made successfully. Proceed to payment.";
-    $redirect_url = "payment.php?orderid=" . urlencode($ordersID);
+    $redirect_url = "payment.php?amount=" . urlencode($amount_after_charge) . "&orderid=" . urlencode($ordersID) . "&charge=" . urlencode($serviceCharge);
     echo "<script>alert('$success_message'); window.location.href='$redirect_url';</script>";
     exit();
 

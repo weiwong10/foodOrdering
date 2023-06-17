@@ -16,7 +16,7 @@ else{
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Donutopia Shop</title>
+  <title>Sweet Sensations</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -44,8 +44,8 @@ else{
 
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="container text-center text-md-left" data-aos="fade-up">
-      <h1>Welcome to <span> Donutopia Shop</span></h1>
-      <h2>A shop which provided delicious and special donut</h2>
+      <h1>Welcome to <span>Sweet Sensations</span></h1>
+      <h2>A shop which provided a various of candy</h2>
       <a href="#what-we-do" class="btn-get-started scrollto">Get Started</a>
     </div>
   </section>
@@ -64,8 +64,8 @@ else{
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="icon-box">
               <div class="icon"><i class="fa-solid fa-stroopwafel"></i></div>
-              <h4><a href="dog_grooming.php">Delicious Donut</a></h4>
-              <p>We offer a wide variety of donut flavors and types to choose from.</p>
+              <h4><a href="dog_grooming.php">Delicious Candy</a></h4>
+              <p>We offer a wide variety of candy and types to choose from.</p>
             </div>
           </div>
 
@@ -73,7 +73,7 @@ else{
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
               <h4><a href="dog_product.php">Easily To Order</a></h4>
-              <p>We have developed a convenient online ordering system where users can easily place their donut orders and choose to pick them up at our store location.</p>
+              <p>We have developed a convenient online ordering system where users can easily place their candy orders and choose to pick them up at our store location.</p>
             </div>
           </div>
         </div>
@@ -91,7 +91,7 @@ else{
 			  
             <h3>About Us</h3>
             <p style="text-align: justify">
-                Indulge in a donut lover's paradise at our shop! We offer a tempting array of fresh, flavorful donuts crafted with love. Conveniently place your order online and pick up your delectable treats at our store. Join us and treat yourself to a delightful donut experience that will leave you craving more.</p>
+                Indulge in a candy lover's paradise at our shop! We offer a tempting array of fresh, flavorful donuts crafted with love. Conveniently place your order online and pick up your delectable treats at our store. Join us and treat yourself to a delightful donut experience that will leave you craving more.</p>
             <ul>
               <li><i class="bx bx-check-double"></i>Good service attitude.</li>
               <li><i class="bx bx-check-double"></i>High quality donut.</li>
@@ -123,7 +123,7 @@ else{
                 <div class="col-lg-4 info mt-4 mt-lg-0">
                   <a href="mailto:tanleqie@gmail.com"><i class="bi bi-envelope"></i></a>
                   <h4>Email:</h4>
-                  <p>donutopia@gmail.com</p>
+                  <p>sweetsensations@gmail.com</p>
                 </div>
 
                 <div class="col-lg-4 info mt-4 mt-lg-0">

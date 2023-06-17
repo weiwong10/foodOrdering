@@ -19,15 +19,15 @@ $result = $conn->query($sql);
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="shortcut icon" type="image/png" href="../image/pets.png">
+<link rel="shortcut icon" type="image/png" href="../image/candy11.png">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 <link rel="stylesheet" type="text/css" href="../css/menu.css">
-<title>Abby Shop</title>
+<title>Sweet Sensations</title>
 </head>
 
 <body>
 	<?php include('headerCust.php');?>
-	<p style="margin-top: 120px; "><center><b style="font-size: 25px;">ALL DONUT</b></center></p>
+	<p style="margin-top: 120px; "><center><b style="font-size: 25px;">ALL CANDY</b></center></p>
 	
 	<main>
 	<?php 
@@ -41,8 +41,7 @@ $result = $conn->query($sql);
 			<div class="caption">
 				<p class="productName"><b><?php echo $row["itemName"] ?></b></p>
 				<p class="price"><b>Price : RM <?php echo $row["unitPrice"] ?></b></p>
-				<p class="price"><b>Ingredient :</b></p>
-				<p class="price"><?php echo $row["ingredient"] ?></p>
+				<p class="stock"><b>Stock Quantity :<?php echo $row["stockQuantityProduct"] ?></b></p>
 				<input type='hidden' name='itemID' value='<?php echo $row["itemID"] ?>'/>
 				<input type='hidden' name='unitPrice' value='<?php echo $row["unitPrice"] ?>'/>
 				<input type='hidden' name='itemName' value='<?php echo $row["itemName"] ?>'/>	

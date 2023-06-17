@@ -20,7 +20,7 @@ if (isset($_GET['id'])) {
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/png" href="../image/#.png">
-<title>DONUTOPIA </title>
+<title>Sweet Sensations </title>
 <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 <!-- Web Fonts
 ======================= -->
@@ -57,7 +57,7 @@ if (isset($_GET['id'])) {
   <header>
   <div class="row align-items-center">
     <div class="col-sm-7 text-center text-sm-left mb-3 mb-sm-0">
-      <img id="logo" src="../image/2.png" title="Ospoly" alt="ABBY Logo" style="width: 18%; height: 18%;"/>
+      <img id="logo" src="../image/cute.png" title="Ospoly" alt="ABBY Logo" style="width: 18%; height: 18%;"/>
     </div>
     <div class="col-sm-5 text-center text-sm-right">
       <h4 class="text-7 mb-0">Receipt</h4>
@@ -74,7 +74,7 @@ if (isset($_GET['id'])) {
     
   </div>
   <div class="row">
-    <div class="col-sm-12 text-sm-center"><h3 style="padding-top: 15px;">INVOICE DONUTOPIA</h3></div>
+    <div class="col-sm-12 text-sm-center"><h3 style="padding-top: 15px;">RECEIPT SWEET SENSATIONS</h3></div>
     
   </div>
   <hr style="background-color: black;">
@@ -136,7 +136,14 @@ if (isset($_GET['id'])) {
               <td colspan="4" class="text-right"><strong>Total:</strong></td>
               <td class="text-right">RM <?php echo $rowPayment['amount']; ?></td>
             </tr>
-      
+            <tr>
+              <td colspan="4" class="text-right"><strong>Delivery Charge (10%) :</strong></td>
+              <td class="text-right">RM <?php echo $rowPayment['deliveryCharge']; ?></td>
+            </tr>
+            <tr>
+              <td colspan="4" class="text-right"><strong>Total:</strong></td>
+              <td class="text-right">RM <?php echo $rowPayment['totalAmount']; ?></td>
+            </tr>
       </tfoot>
         </table>
       </div>
@@ -153,7 +160,7 @@ if (isset($_GET['id'])) {
   <a href="#" id="download" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-download"></i> Download</a> 
   <a href="menu.php" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-chevron-left"></i> Back</a>   
   </div>
-  </footer> 
+  </footer> <br>
 
 </div> <?php }   ?>
 

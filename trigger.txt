@@ -1,0 +1,11 @@
+DELIMITER //
+CREATE TRIGGER update_stk_quantity AFTER INSERT ON order_detail
+FOR EACH ROW
+BEGIN
+    -- Subtract the purchased quantity from the stock quantity
+    UPDATE item
+    SET stockQuantityProduct = stockQuantityProduct - NEW.quantity
+    WHERE itemID = NEW.itemID;
+END //
+
+DELIMITER ;

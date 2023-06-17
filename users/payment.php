@@ -22,12 +22,19 @@ if ($result->num_rows > 0) {
   $telephone = $row["contactNo"];
 }
 
-// Get the  order ID and service charge values from the URL query string
+if (isset($_GET['amount'])) {
+    $amount = $_GET['amount'];
+}
+
 if (isset($_GET['orderid'])) {
     $orderid = $_GET['orderid'];
 } 
 
-$result1 =mysqli_query($conn,"INSERT INTO payment (paymentDate, paymentMethod, orderID) VALUES (NOW(),'Online Banking','$orderid')");
+if (isset($_GET['charge'])) {
+    $charge = $_GET['charge'];
+}
+
+$result1 =mysqli_query($conn,"INSERT INTO payment (paymentDate, paymentMethod, deliveryCharge, totalAmount, orderID) VALUES (NOW(),'Online Banking', '$charge', '$amount', '$orderid')");
 
 
 ?>
@@ -41,7 +48,7 @@ $result1 =mysqli_query($conn,"INSERT INTO payment (paymentDate, paymentMethod, o
 	<link rel="shortcut icon" type="image/png" href="../image/pets.png">
     <!-- custom css file link  -->
     <link rel="stylesheet" href="../css/payment.css">
-
+	<title>Sweet Sensations</title>
 </head>
 <body>
 	<div class="container">

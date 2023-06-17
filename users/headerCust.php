@@ -11,13 +11,13 @@
 <body>
 <header>
 	
-	<a href="#" class="logo">Donutopia</a>
+	<a href="#" class="logo">Sweet Sensations</a>
 	<input type="checkbox" id="menu-bar">
 	<label for="menu-bar">Menu</label>
 	<nav class="navbar">
     <ul>
         
-        <li><a href="index.php">About Us</a></li>
+        <li><a href="index.php">Home</a></li>
 		<li><a href="menu.php">Menu</a></li>
         <li><a href="addCart.php">My Cart</a></li>
 		<li><a href="orderHistory.php">Order History</a></li>

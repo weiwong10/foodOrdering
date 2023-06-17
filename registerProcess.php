@@ -1,7 +1,15 @@
 <?php
 include "connect.php";
 session_start();
-	
+
+  //Email
+  use PHPMailer\PHPMailer\PHPMailer;
+  use PHPMailer\PHPMailer\SMTP;
+  use PHPMailer\PHPMailer\Exception;
+
+  require_once 'admin/src/Exception.php';
+  require_once 'admin/src/PHPMailer.php';
+  require_once 'admin/src/SMTP.php';
 
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
@@ -62,20 +70,58 @@ if (isset($_POST['reg_user'])) {
       header("Location: register.php?error=Email already exists");
 	}
   }
-  if($contact){
+  elseif ($contact) {
     header("Location: register.php?error=Contact Number already exists");
-  }
+
+  }else{
 
   // Finally, register user if there are no errors in the form
-	$password = ($password_1);//enzcrypt the password before saving in the database
+	$password = md5($password_1);//enzcrypt the password before saving in the database
 	
 
   	$query = "INSERT INTO customer (name , email, gender, dob, contactNo, password) 
   			  VALUES('$name','$username', '$gentle', '$dob', '$contactNo', '$password')";
   	mysqli_query($conn, $query);
+
+    
+    // Email notification using PHPMailer
+    $subject = "System Registration";
+    $txt = "Hi " . $name . ", Welcome to the Sweet Sensations.<br> You have successfully registered an account. <br> Your username is <strong>" . $username . "</strong> and password is <strong>" . $password_1 . "</strong><br> Thank you.";
+
+    $mail = new PHPMailer(true);
+
+    try {
+        // Server settings
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
+
+        $mail->Username = 'weiwong990827@gmail.com'; // Your Gmail email
+        $mail->Password = 'hdeijdcgfxbuvqtd'; // Your Gmail password
+
+        // Sender and recipient settings
+        $mail->setFrom('no-reply@utem.edu.my', 'SYSTEM REGISTRATION [no-reply]');
+        $mail->addAddress($username, $name);
+        $mail->addReplyTo('no-reply@utem.edu.my', 'SYSTEM REGISTRATION [no-reply]');
+
+        // Setting the email content
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body = $txt;
+
+        $mail->send();
+
+    } catch (Exception $e) {
+        echo "Email could not be sent. Error: {$mail->ErrorInfo}";
+    }
+
+
     echo "<script>alert('Register Success');</script>";
     echo"<meta http-equiv='refresh' content='0; url=index.php'/>";
-    }
+  }
+  }
 }
 
 ?>

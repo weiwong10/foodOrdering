@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Donutopia</title>
+    <title>Sweet Sensations</title>
     <link rel="stylesheet" href="css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
@@ -11,7 +11,7 @@
     <div class="main">
         <div class="navbar">
             <div class="icon">
-                <h3 class="logo">The<span>Donutopia</span></h3>
+                <h3 class="logo">Sweet<span>Sensations</span></h3>
             </div>
 
             <div class="menu">
@@ -27,11 +27,11 @@
         </div> 
         <div class="content">
             <h1>Online<br><span>Ordering</span> </h1>
-            <p class="par"> <br> 
-            Donutopia is the ultimate online donut ordering system, offering a wide <br>
-            selection of delectable treats for users to choose from. Convenient and <br>
-            user-friendly, Donutopia makes it easy to explore and order a variety of <br>
-            mouthwatering donuts. Satisfaction guaranteed with every bite.
+            <p class="par"> <br>
+            Sweet Sensations is an online candy store that offers a variety of delightful<br> 
+            treats. From traditional favorites to exciting and unique confections, Sweet <br>
+            Sensations has something for everyone. With easy online ordering, satisfying your <br>
+            sweet cravings has never been simpler.
             </p>
 
                 <button class="cn"><a href="register.php">JOIN US</a></button>

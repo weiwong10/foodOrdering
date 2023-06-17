@@ -72,7 +72,7 @@ $totalPages = ceil($totalResults / $resultsPerPage);
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
-<link rel="shortcut icon" type="image/png" href="../image/pets.png">
+<link rel="shortcut icon" type="image/png" href="../image/candy11.png">
 
 	<!--Bootstrap-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -81,7 +81,7 @@ $totalPages = ceil($totalResults / $resultsPerPage);
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 	
-	<title>Customer's Order History</title>
+    <title>Sweet Sensations</title>
 </head>
 	
 <body> 

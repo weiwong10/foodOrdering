@@ -85,7 +85,7 @@ else{
 
         <div class="row">
           <div class="col-lg-4">
-            <img src="../image/aboutUs.jpg" class="img-fluid" alt="">
+            <img src="../image/cute.png" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
 			  
@@ -93,8 +93,8 @@ else{
             <p style="text-align: justify">
                 Indulge in a candy lover's paradise at our shop! We offer a tempting array of fresh, flavorful donuts crafted with love. Conveniently place your order online and pick up your delectable treats at our store. Join us and treat yourself to a delightful donut experience that will leave you craving more.</p>
             <ul>
-              <li><i class="bx bx-check-double"></i>Good service attitude.</li>
-              <li><i class="bx bx-check-double"></i>High quality donut.</li>
+              <li><i class="bx bx-check-double"></i>Good Service Attitude.</li>
+              <li><i class="bx bx-check-double"></i>High Quality Candy.</li>
             </ul>
 
           </div>

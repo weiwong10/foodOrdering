@@ -10,7 +10,7 @@
 
 <style>
 	body{
-	background-image: url("image/donut3.jpg");
+	background-image: url("image/sweet3.jpg");
 	background-repeat: no repeat;
 	background-attachment: fixed;
 	background-size: cover;	

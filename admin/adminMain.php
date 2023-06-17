@@ -16,7 +16,7 @@ else{
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Donutopia Shop</title>
+  <title>Sweet Sensations</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -30,6 +30,8 @@ else{
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="../css/adminMain.css">
+
+  <link rel="shortcut icon" type="image/png" href="../image/candy11.png">
 
 </head>
 

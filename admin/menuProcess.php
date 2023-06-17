@@ -61,7 +61,9 @@ if(isset($_GET['itemID']) && isset($_GET['action']) && $_GET['action'] == "updat
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Update Menu</title>
+  <title>Sweet Sensations</title>
+
+  <link rel="shortcut icon" type="image/png" href="../image/candy11.png">
 
   <link rel="stylesheet" type="text/css" href="css/common.css">
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>

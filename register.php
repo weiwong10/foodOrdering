@@ -61,7 +61,7 @@
 			<label class="form-label">Select Date Birth</label>
 			</div>
 			<p>
-			<input type="date" name="dateofbirth" class="form-control" />
+			<input type="date" max="<?php echo date("Y-m-d"); ?>" name="dateofbirth" class="form-control" />
 			</p>
 		  
 			<div class="mb-3">

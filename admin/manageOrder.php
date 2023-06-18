@@ -101,7 +101,7 @@ else{
 		{
     		if (confirm("Do you want to " + value + "?")) 
 			{
-				let url = "http://localhost/foodOrdering/admin/custOrderDetail.php";
+				let url = "custOrderDetail.php";
 				window.location.href = url + "?status=" + value + "&orderID=" + orderID + "&name=" + name + "&email=" + email;
     		} else {
         		// Set the selected index back to 0

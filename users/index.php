@@ -46,7 +46,7 @@ else{
     <div class="container text-center text-md-left" data-aos="fade-up">
       <h1>Welcome to <span>Sweet Sensations</span></h1>
       <h2>A shop which provided a various of candy</h2>
-      <a href="#what-we-do" class="btn-get-started scrollto">Get Started</a>
+      <a href="#what-we-do" class="btn-get-started">Get Started</a>
     </div>
   </section>
 

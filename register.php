@@ -70,7 +70,7 @@
 		  
 			<div class="mb-3">
 		    <label for="contactNo" class="form-label">Address </label>
-		    <input type="text" name="address" placeholder="1/3 Jalan Utama 1, Taman Utaman, 55100 Kuala Lumpur" class="form-control" id="contactNo">
+		    <input type="text" name="address" placeholder="e.g. 1/3 Jalan Utama 1, Taman Utaman, 55100 Kuala Lumpur" class="form-control" id="contactNo">
 		    </div>
 
 		  <div class="mb-3">

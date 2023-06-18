@@ -61,8 +61,15 @@ if (isset($_POST['checkout'])){
         exit();
     }
 	
-	// Update product table to deduct stock quantity
-    
+	
+        // Update product table to deduct stock quantity
+        $updateStmt = $conn->prepare("UPDATE item SET stockQuantityProduct = stockQuantityProduct - ? WHERE itemID = ?");
+        $updateStmt->bind_param("ii", $quantity, $itemID);
+
+        if (!$updateStmt->execute()) {
+            echo "Error updating stock quantity: " . $updateStmt->error;
+            exit();
+        }
 	}
 	  
     

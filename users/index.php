@@ -147,14 +147,9 @@ else{
 
       <div class="me-md-auto text-center text-md-start">
         <div class="copyright">
-          &copy; Copyright <strong><span>Abby Shop</span></strong>. All Rights Reserved
+          &copy; Copyright <strong><span>Sweet Sensations</span></strong>. All Rights Reserved
         </div>
 
-      </div>
-      <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="https://twitter.com/lauren20000402" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="https://www.facebook.com/tan.leqi.31/" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="https://www.instagram.com/leqi.42/" class="instagram"><i class="bx bxl-instagram"></i></a>
       </div>
     </div>
   </footer>

@@ -83,8 +83,8 @@ try {
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
-    $mail->Username = 'weiwong990827@gmail.com'; // Your Gmail email
-    $mail->Password = 'hdeijdcgfxbuvqtd'; // Your Gmail password
+    $mail->Username = 'tweiw10@gmail.com'; // Your Gmail email
+    $mail->Password = 'pucfbxouhyvekdfl'; // Your Gmail password
 
     // Sender and recipient settings
     $mail->setFrom('no-reply@utem.edu.my', 'SWEET SENSATIONS [no-reply]');

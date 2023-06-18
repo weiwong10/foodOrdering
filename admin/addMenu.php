@@ -61,6 +61,7 @@ if(isset($_POST['submit']))
 
 <?php include("headerAdmin.php") ?>
 
+<br><br>
 <div class="d-flex justify-content-center
 -align-items-center">
      <form action="addMenu.php" method="post" class="shadow p-4 rounded mt-5" style="width: 90%; max-width: 50rem;" enctype="multipart/form-data">

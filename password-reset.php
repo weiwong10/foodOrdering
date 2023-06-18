@@ -13,7 +13,9 @@
 	//	{
 	//		die("connection_error");
 	//	}
-		$sql="update customer set password= '".$newPass. "' WHERE email = '".$usr. "'";
+		$md_password = md5($newPass);
+
+		$sql="update customer set password= '".$md_password. "' WHERE email = '".$usr. "'";
 		$result=mysqli_query($conn,$sql);
         echo "<script>alert('Password Change Success');</script>";
         echo"<meta http-equiv='refresh' content='0; url=index.php'/>";

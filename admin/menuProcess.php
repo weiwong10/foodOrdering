@@ -25,7 +25,7 @@ if(isset($_GET['itemID']) && isset($_GET['action']) && $_GET['action'] == "updat
         if(!empty($insert_image)){
           if($insert_image_size > 100000){
               echo "<script>alert('Image is too big');</script>";
-              echo "<script>window.location.href ='itemProcess.php?itemID=".$itemID."&action=update'</script>";
+              echo "<script>window.location.href ='menuProcess.php?itemID=".$itemID."&action=update'</script>";
           }
           else{
               $image = addslashes(file_get_contents($insert_image_tmp_name));

@@ -83,8 +83,8 @@ if (isset($_POST['reg_user'])) {
 	$password = md5($password_1);//enzcrypt the password before saving in the database
 	
 
-  	$query = "INSERT INTO customer (name , email, gender, dob, contactNo, password) 
-  			  VALUES('$name','$username', '$gentle', '$dob', '$contactNo', '$password')";
+  	$query = "INSERT INTO customer (name , email, gender, dob, contactNo, password, address) 
+  			  VALUES('$name','$username', '$gentle', '$dob', '$contactNo', '$password', '$address')";
   	mysqli_query($conn, $query);
 
     

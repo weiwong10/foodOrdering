@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Register</title>
+	<link rel="shortcut icon" type="image/png" href="image/candy11.png">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
@@ -70,7 +71,7 @@
 		  
 			<div class="mb-3">
 		    <label for="contactNo" class="form-label">Address </label>
-		    <input type="text" name="address" placeholder="1/3 Jalan Utama 1, Taman Utaman, 55100 Kuala Lumpur" class="form-control" id="contactNo">
+		    <input type="text" name="address" placeholder="e.g. 1/3 Jalan Utama 1, Taman Utaman, 55100 Kuala Lumpur" class="form-control" id="contactNo">
 		    </div>
 
 		  <div class="mb-3">

@@ -85,13 +85,13 @@ else{
 
         <div class="row">
           <div class="col-lg-4">
-            <img src="../image/cute.png" class="img-fluid" alt="">
+            <img src="../image/candyshop.jpeg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
 			  
             <h3>About Us</h3>
             <p style="text-align: justify">
-                Indulge in a candy lover's paradise at our shop! We offer a tempting array of fresh, flavorful donuts crafted with love. Conveniently place your order online and pick up your delectable treats at our store. Join us and treat yourself to a delightful donut experience that will leave you craving more.</p>
+                Indulge in a candy lover's paradise at our shop! We offer a tempting array of candy. Conveniently place your order online and pick up your delectable treats at our store. Join us and treat yourself to a delightful candy experience that will leave you craving more.</p>
             <ul>
               <li><i class="bx bx-check-double"></i>Good Service Attitude.</li>
               <li><i class="bx bx-check-double"></i>High Quality Candy.</li>
@@ -147,14 +147,9 @@ else{
 
       <div class="me-md-auto text-center text-md-start">
         <div class="copyright">
-          &copy; Copyright <strong><span>Abby Shop</span></strong>. All Rights Reserved
+          &copy; Copyright <strong><span>Sweet Sensations</span></strong>. All Rights Reserved
         </div>
 
-      </div>
-      <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="https://twitter.com/lauren20000402" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="https://www.facebook.com/tan.leqi.31/" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="https://www.instagram.com/leqi.42/" class="instagram"><i class="bx bxl-instagram"></i></a>
       </div>
     </div>
   </footer>

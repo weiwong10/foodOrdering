@@ -1,9 +1,9 @@
 <?php
 
-$servername = "sql208.infinityfree.com";
-$user = "if0_34452630";
-$password="hIbfzQLyTHqV";
-$database = "if0_34452630_foodordering";
+$servername = "localhost";
+$user = "root";
+$password="";
+$database = "foodOrdering";
 
 $conn = new mysqli($servername, $user, $password, $database);
 
@@ -13,7 +13,6 @@ if ($conn->connect_error) {
 }
 
 //echo "Connect success!";
-
 ?>
 
 

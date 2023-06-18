@@ -54,7 +54,7 @@ else{
         <div class="box">
             <div class="image">
                 <a href="manageMenu.php">
-                    <img src="images/manageMenu.jpg" alt="Description of the image" title="This is an example image">
+                    <img src="../image/back.jpg" alt="Description of the image" title="This is an example image">
                 </a>
             </div>
             <div class="content">
@@ -67,7 +67,7 @@ else{
         <div class="box">
             <div class="image">
                 <a href="manageOrder.php">
-                    <img src="images/manageOrder.jpg" alt="Description of the image" title="This is an example image">
+                    <img src="../image/back1.jpeg" alt="Description of the image" title="This is an example image">
                 </a>                        
             </div>
             <div class="content">

@@ -94,7 +94,7 @@ if (isset($_GET['id'])) {
       NAME: <?php echo $rowPayment['name']; ?><br />
       EMAIL: <?php echo $rowPayment['email']; ?><br />
       TELEPHONE: <?php echo $rowPayment['contactNo']; ?><br />
-      
+      ADDRESS: <?php echo $rowPayment['address']; ?><br />
       </address>
     </div>
   </div>

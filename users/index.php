@@ -46,7 +46,7 @@ else{
     <div class="container text-center text-md-left" data-aos="fade-up">
       <h1>Welcome to <span>Sweet Sensations</span></h1>
       <h2>A shop which provided a various of candy</h2>
-      <a href="#what-we-do" class="btn-get-started scrollto">Get Started</a>
+      <a href="#what-we-do" class="btn-get-started">Get Started</a>
     </div>
   </section>
 
@@ -85,13 +85,13 @@ else{
 
         <div class="row">
           <div class="col-lg-4">
-            <img src="../image/cute.png" class="img-fluid" alt="">
+            <img src="../image/candyshop.jpeg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
 			  
             <h3>About Us</h3>
             <p style="text-align: justify">
-                Indulge in a candy lover's paradise at our shop! We offer a tempting array of fresh, flavorful donuts crafted with love. Conveniently place your order online and pick up your delectable treats at our store. Join us and treat yourself to a delightful donut experience that will leave you craving more.</p>
+                Indulge in a candy lover's paradise at our shop! We offer a tempting array of candy. Conveniently place your order online and pick up your delectable treats at our store. Join us and treat yourself to a delightful candy experience that will leave you craving more.</p>
             <ul>
               <li><i class="bx bx-check-double"></i>Good Service Attitude.</li>
               <li><i class="bx bx-check-double"></i>High Quality Candy.</li>

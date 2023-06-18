@@ -43,7 +43,8 @@ $offset = ($page - 1) * $resultsPerPage;
 // Construct the SQL query with pagination
 $sql = "SELECT * FROM orders o 
         INNER JOIN order_detail a ON o.orderID = a.orderID 
-        INNER JOIN item p ON p.itemID = a.itemID ";
+        INNER JOIN item p ON p.itemID = a.itemID 
+        WHERE orderStatus = 'Shipped'";
 
 // Add the search conditions if the parameters are provided
 if (!empty($orderID)) {

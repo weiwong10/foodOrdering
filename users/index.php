@@ -11,13 +11,11 @@ else{
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html><head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Sweet Sensations</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+ 
 
 	<link rel="shortcut icon" type="image/png" href="../image/candy11.png">
 
@@ -114,25 +112,27 @@ else{
           <div class="col-lg-10">
             <div class="info-wrap">
               <div class="row">
-                <div class="col-lg-4 info">
+                <div class="col-sm-12 col-md-4 info">
                   <i class="bi bi-geo-alt"></i>
                   <h4>Location:</h4>
                   <p>19, Lorong Bukit Beruang Utama 1, Taman Bukit Beruang, 75450 Melaka</p>
                 </div>
 
-                <div class="col-lg-4 info mt-4 mt-lg-0">
+                <div class="col-sm-12 col-md-4 info mt-4 mt-md-0">
                   <a href="mailto:tanleqie@gmail.com"><i class="bi bi-envelope"></i></a>
                   <h4>Email:</h4>
                   <p>sweetsensations@gmail.com</p>
                 </div>
 
-                <div class="col-lg-4 info mt-4 mt-lg-0">
+                <div class="col-sm-12 col-md-4 info mt-4 mt-md-0">
                   <i class="bi bi-phone"></i>
                   <h4>Call:</h4>
                   <p>+019 5050053</p>
                 </div>
               </div>
-				<p><center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.731415372171!2d102.27348661016713!3d2.253983357994188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d1e55e72aa3e9f%3A0x27d1beab5de9f00e!2s19%2C%20Lorong%20Bukit%20Beruang%20Utama%201%2C%20Taman%20Bukit%20Beruang%20Indah%2C%2075450%20Melaka!5e0!3m2!1sen!2smy!4v1686735569001!5m2!1sen!2smy" width="800" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></center></p>
+              <div class="text-center">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7973.462860092325!2d102.276067!3d2.253978!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d1e55e72aa3e9f%3A0x27d1beab5de9f00e!2s19%2C%20Lorong%20Bukit%20Beruang%20Utama%201%2C%20Taman%20Bukit%20Beruang%20Indah%2C%2075450%20Melaka!5e0!3m2!1sen!2smy!4v1687789328571!5m2!1sen!2smy" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
             </div>
 
           </div>

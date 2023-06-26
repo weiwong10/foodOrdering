@@ -8,7 +8,7 @@ if(isset($_POST['submit']))
   $itemName=$_POST['itemName'];
   $unitPrice=$_POST['unitPrice'];
   $stock=$_POST['stock'];
-
+  $pathFile=$_POST['pathFile'];
 
   $insert_image = $_FILES['image']['name'];
   $insert_image_size = $_FILES['image']['size'];
@@ -23,7 +23,7 @@ if(isset($_POST['submit']))
         $image = addslashes(file_get_contents($insert_image_tmp_name));
 
 
-            $query= "INSERT INTO item (itemName, unitPrice, stockQuantityProduct, image, staffID) VALUE ('$itemName','$unitPrice','$stock','$image', '$id')";
+            $query= "INSERT INTO item (itemName, unitPrice, stockQuantityProduct, image, staffID, pathFile) VALUE ('$itemName','$unitPrice','$stock','$image', '$id', '$pathFile')";
             mysqli_query($conn, $query);
 
             echo "<script>alert('Insert Success');</script>";
@@ -83,6 +83,11 @@ if(isset($_POST['submit']))
       <div class="mb-3">
         <label class="form-label">Stock Quantity</label>
         <input type="number" min="1" class="form-control" name="stock" required>
+      </div>
+      
+      <div class="mb-3">
+        <label class="form-label">Path File</label>
+        <input type="text" class="form-control" name="pathFile" required>
       </div>
 
       <div class="form-group">

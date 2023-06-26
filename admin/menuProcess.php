@@ -16,7 +16,8 @@ if(isset($_GET['itemID']) && isset($_GET['action']) && $_GET['action'] == "updat
         $itemName=$_POST['itemName'];
         $unitPrice=$_POST['unitPrice'];
         $stock =$_POST['stock'];
-      
+        $pathFile =$_POST['pathFile'];
+
       
         $insert_image = $_FILES['image']['name'];
         $insert_image_size = $_FILES['image']['size'];
@@ -34,7 +35,7 @@ if(isset($_GET['itemID']) && isset($_GET['action']) && $_GET['action'] == "updat
                 $image_update_query = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
 
-                $query= "UPDATE item SET itemName = '$itemName', unitPrice = '$unitPrice', stockQuantityProduct = '$stock' WHERE itemID='$itemID'";
+                $query= "UPDATE item SET itemName = '$itemName', unitPrice = '$unitPrice', stockQuantityProduct = '$stock', pathFile = '$pathFile' WHERE itemID='$itemID'";
                 mysqli_query($conn, $query);
 
                 echo "<script>alert('Update Success');</script>";
@@ -104,6 +105,11 @@ if(isset($_GET['itemID']) && isset($_GET['action']) && $_GET['action'] == "updat
       <div class="mb-3">
         <label class="form-label">Stock Quantity</label>
         <input type="number" class="form-control" name="stock" value="<?php echo $row['stockQuantityProduct']?>" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Stock Quantity</label>
+        <input type="text" class="form-control" name="pathFile" value="<?php echo $row['pathFile']?>" required>
       </div>
 
       <div class="form-group">
